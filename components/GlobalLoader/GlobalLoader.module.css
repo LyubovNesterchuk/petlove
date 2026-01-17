@@ -1,0 +1,48 @@
+.global-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  background-image: url('/images/loader-bg.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* затемнення поверх фото */
+.global-loader::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.content {
+  position: relative;
+  text-align: center;
+  color: #fff;
+}
+
+.percent {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.progress-bar {
+  width: 240px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 16px;
+}
+
+.progress {
+  height: 100%;
+  background: #f6b83d;
+  transition: width 0.3s ease;
+}
