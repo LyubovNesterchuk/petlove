@@ -33,8 +33,8 @@ export default function NotFoundPage() {
           <Image
             src="/images/notfound-img.png"
             alt="Cat"
-            width={120}
-            height={120}
+            width={280}
+            height={280}
             priority
           />
 

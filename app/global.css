@@ -63,20 +63,24 @@ a {
   align-items: center;
   justify-content: center;
   gap: 24px;
-  font-size: 160px;
   font-weight: 800;
+  font-size: 300px;
+  line-height: 1;
   color: #fff;
+  margin-bottom: 40px;
 }
 
 .text {
-  margin-top: 24px;
-  font-size: 20px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.7;
   color: #fff;
+  margin-bottom: 20px;
 }
 
 .btn {
   display: inline-block;
-  margin-top: 32px;
+ 
   padding: 12px 32px;
   background: #fff;
   color: #111;
