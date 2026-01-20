@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
+// import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import clsx from "clsx";
@@ -27,18 +27,15 @@ export default function Header() {
   className={clsx(
     styles.header,
     isHome && styles.headerHome,
-    isHome && styles.home,
-    !isHome && styles.headerBorder
+    isHome && styles.home
   )}
 >
       <div className={styles.container}>
-        {/* LOGO */}
+      
         <Link href="/" className={styles.logo}>
-          <span>pet</span>
-          <svg className={styles.heart} width="20" height="20">
+          petl<svg className={styles.heart} width="23" height="23">
             <use href="/sprite.svg#icon-heart" />
-          </svg>
-          <span>love</span>
+          </svg>ove
         </Link>
 
         {/* DESKTOP NAV */}
@@ -61,24 +58,27 @@ export default function Header() {
         {!isAuth ? (
           <div className={styles.actions}>
             <Link href="/login" className={styles.login}>
-              LOG IN
+              Log in
             </Link>
             <Link href="/register" className={styles.register}>
               REGISTRATION
             </Link>
           </div>
         ) : (
-          <div className={styles.user}>
-            <Link href="/profile" className={styles.userBar}>
-              <Image
-                src="/avatar-default.png"
-                alt="User avatar"
-                width={32}
-                height={32}
-              />
-              <span>Anna</span>
+           <div className={styles.user}>
+              {!isHome && (
+                <button className={styles.logout}>
+                  Log out
+                </button>
+              )}
+            <Link href="/profile" className={`${styles.userBar}`}>
+              <span className={styles.avatar}>
+                <svg className={styles.userIcon} width="24" height="24">
+                  <use href="/sprite.svg#icon-user" />
+                </svg>
+              </span>
+              <span className={styles.name}>Anna</span>
             </Link>
-            <button className={styles.logout}>Log out</button>
           </div>
         )}
 

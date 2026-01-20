@@ -1,3 +1,3 @@
 export default function FriendsPage() {
-  return <h1>Friends</h1>;
+  return <h1>Our friends</h1>;
 }
