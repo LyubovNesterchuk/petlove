@@ -1,6 +1,6 @@
 'use client';
 
-import css from "./SignUpPage.module.css";
+import css from "./RegistrationPage.module.css";
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
@@ -8,7 +8,7 @@ import { useAuthStore } from '@/lib/store/authStore';
 import { ApiError } from '@/app/api/api';
 import { register, RegisterRequest } from '@/lib/api/clientApi';
 
-export default function SignUp() {
+export default function Registration() {
   const router = useRouter();
   const [error, setError] = useState('');
   const setUser = useAuthStore((state) => state.setUser) 
@@ -48,7 +48,7 @@ export default function SignUp() {
 
           <div className={css.actions}>
             <button type="submit" className={css.submitButton}>
-              Register
+              Registration
             </button>
           </div>
 

@@ -7,7 +7,7 @@ import { ApiError } from '@/app/api/api';
 import { login, LoginRequest } from '@/lib/api/clientApi';
 import css from "./SignInPage.module.css"
 
-export default function SignIn(){
+export default function LogIn(){
 	 const router = useRouter();
 	 const [error, setError] = useState('');
  

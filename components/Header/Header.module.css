@@ -1,0 +1,188 @@
+/* =====================
+   HEADER
+===================== */
+.header {
+  width: 100%;
+  background: transparent;
+  position: relative;
+  z-index: 10;
+}
+
+.headerBorder {
+  border-bottom: 1px solid #eee;
+}
+
+.headerHome {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* =====================
+   CONTAINER
+===================== */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* =====================
+   LOGO
+===================== */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 700;
+  font-size: 20px;
+  text-decoration: none;
+  color: #111;
+}
+
+.heart {
+  fill: #f6b83d;
+}
+
+/* HOME logo */
+.home .logo {
+  color: #ffffff;
+}
+
+.home .heart {
+  fill: #ffffff;
+}
+
+/* =====================
+   NAVIGATION
+===================== */
+.nav {
+  display: flex;
+  gap: 32px;
+}
+
+.navLink {
+  color: #111;
+  padding: 8px 16px;
+  border-radius: 30px;
+  border: 1px solid #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* active page */
+.nav .active {
+  border: 1px solid #f6b83d;
+}
+
+/* HOME nav */
+.home .navLink {
+  color: #ffffff;
+}
+
+/* =====================
+   ACTIONS
+===================== */
+.actions {
+  display: flex;
+  gap: 16px;
+}
+
+/* LOGIN — default (інші сторінки) */
+.login {
+  padding: 10px 20px;
+  border-radius: 30px;
+  background-color: #f6b83d;
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+}
+
+/* LOGIN — HOME */
+.home .login {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+}
+
+/* REGISTRATION — завжди */
+.register {
+  padding: 10px 20px;
+  border-radius: 30px;
+  background-color: #fff1d6;
+  color: #f6b83d;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* =====================
+   USER
+===================== */
+.user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.userBar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logout {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* =====================
+   BURGER
+===================== */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: transparent;
+  border: none;
+}
+
+.burger span {
+  width: 24px;
+  height: 2px;
+  background: #111;
+}
+
+/* =====================
+   MOBILE
+===================== */
+.mobileMenu {
+  padding: 24px;
+}
+
+.mobileNav,
+.mobileActions,
+.mobileUser {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 768px) {
+  .nav,
+  .actions,
+  .user {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+  }
+}

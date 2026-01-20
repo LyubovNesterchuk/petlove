@@ -4,10 +4,9 @@
   border-radius: 32px;
   overflow: hidden;
 }
-
 .heroTop {
   background: #f6b83d;
-  padding: 64px;
+  padding: 120px 64px 64px; /* ⬅️ ОЦЕ КЛЮЧ */
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
