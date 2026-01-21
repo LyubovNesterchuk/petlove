@@ -1,4 +1,4 @@
-.header {
+/* .header {
   width: 100%;
   background: transparent;
   position: relative;
@@ -112,7 +112,7 @@
 /* =====================
    USER
 ===================== */
-.user {
+/* .user {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -162,51 +162,254 @@
   line-height: 1.3;
   text-transform: uppercase;
   color: #fff;
-}
+} */
 
-/* =====================
-   BURGER
-===================== */
-.burger {
-  display: none;
-  flex-direction: column;
-  gap: 4px;
+.header {
+  width: 100%;
   background: transparent;
-  border: none;
+  position: relative;
+  z-index: 10;
 }
 
-.burger span {
-  width: 24px;
-  height: 2px;
-  background: #111;
+
+.headerHome {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-/* =====================
-   MOBILE
-===================== */
-.mobileMenu {
-  padding: 24px;
-}
 
-.mobileNav,
-.mobileActions,
-.mobileUser {
+.container {
+  width: 100%;
+  padding: 20px;
+
   display: flex;
-  flex-direction: column;
-  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
 }
 
-/* =====================
-   RESPONSIVE
-===================== */
-@media (max-width: 768px) {
-  .nav,
+.logo {
+  display: flex;
+  align-items: center;
+
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1;
+
+  color: #262626;
+}
+
+.heart {
+  fill: #f6b83d;
+}
+
+
+.home .logo {
+  color: #ffffff;
+}
+
+.home .heart {
+  fill: #ffffff;
+}
+
+
+.nav {
+  display: none;
+}
+
+
+.actions {
+  display: none;
+}
+
+.burger {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.burger svg {
+  width: 32px;
+  height: 32px;
+  stroke: #262626;
+}
+
+.home .burger svg {
+  stroke: #ffffff;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 12px;
+}
+
+.logout {
+  display: none;
+}
+
+.userBar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+  background-color: #fff4df;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.userIcon {
+  fill: #f6b83d;
+}
+
+.name {
+  display: none;
+}
+
+
+@media (min-width: 375px) {
+  .container {
+    max-width: 375px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 34px 20px 26px;
+  }
+
+  .actions {
+    display: flex;
+    gap: 8px;
+  }
+
+  .login {
+    height: 50px;
+    padding: 15px 35px;
+
+    border-radius: 30px;
+    background-color: #f6b83d;
+
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+
+    color: #ffffff;
+  }
+
+  .home .login {
+    background: transparent;
+    border: 1px solid #ffffff;
+  }
+
+  .register {
+    height: 50px;
+    padding: 15px 20px;
+
+    border-radius: 30px;
+    background-color: #fff4df;
+
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+
+    color: #f6b83d;
+  }
+
+ .user {
+   margin-right: 16px;
+ }
+ 
+  .logout {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 50px;
+    padding: 0 35px;
+
+    border-radius: 30px;
+    border: none;
+
+    background-color: #f6b83d;
+
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+
+    color: #ffffff;
+  }
+}
+
+.name {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1;
+  color:  #262626;
+}
+
+.home .name {
+  color: #ffffff;
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+    padding: 43px 64px;
+  }
+
+  .nav {
+    margin-left: auto;
+    margin-right: 24px;
+  }
+
   .actions,
   .user {
-    display: none;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav {
+    display: flex;
+    gap: 10px;
+  }
+
+  .navLink {
+    border: 1px solid rgba(38, 38, 38, 0.15);
+    border-radius: 30px;
+
+    padding: 15px 20px;
+    height: 50px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.3;
+
+    color: #262626;
+  }
+
+  .home .navLink {
+    border-color: rgba(255, 255, 255, 0.4);
+    color: #ffffff;
+  }
+
+  .active {
+    border-color: #f6b83d;
   }
 
   .burger {
-    display: flex;
+    display: none;
   }
 }
