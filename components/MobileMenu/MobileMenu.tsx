@@ -21,7 +21,7 @@ return (
   <div
   className={clsx(
     styles.menu,
-    isHome ? styles.menuYellow : styles.menuWhite
+    isHome ? styles.menuWhite : styles.menuYellow
   )}
 >
     <button className={styles.close} onClick={onClose}>

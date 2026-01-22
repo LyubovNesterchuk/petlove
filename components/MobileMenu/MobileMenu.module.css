@@ -18,7 +18,8 @@
   background-color: #f6b83d;
 }
 
-.menuYellow .link {
+.menuYellow .link,
+.menuYellow .login {
   color: #ffffff;
   border-color: rgba(255, 255, 255, 0.4);
 }
@@ -29,10 +30,6 @@
 
 .menuYellow .close svg {
   stroke: #ffffff;
-}
-
-.menuYellow .actions {
-  color: #ffffff;
 }
 
 .menuWhite {
@@ -50,10 +47,6 @@
 
 .menuWhite .close svg {
   stroke: #262626;
-}
-
-.menuWhite .actions a {
-  color: #262626;
 }
 
 .close {
@@ -121,7 +114,8 @@
 
     border-radius: 30px;
     background-color: #f6b83d;
-
+    border: 1px solid transparent;
+    
     font-weight: 700;
     font-size: 16px;
     text-transform: uppercase;
