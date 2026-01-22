@@ -12,7 +12,7 @@
 <symbol id="icon-chevron-down" viewBox="0 0 32 32">
 <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.5556" d="M8 12l8 8 8-8"></path>
 </symbol>
-<symbol id="icon-cross-small" viewBox="0 0 32 32">
+<symbol id="icon-cross" viewBox="0 0 32 32">
 <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.9091" d="M25.333 6.667l-18.667 18.667M6.666 6.667l18.667 18.667"></path>
 </symbol>
 <symbol id="icon-edit" viewBox="0 0 32 32">

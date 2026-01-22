@@ -1,169 +1,3 @@
-/* .header {
-  width: 100%;
-  background: transparent;
-  position: relative;
-  z-index: 10;
-}
-
-.headerHome {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 32px 64px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  font-weight: 700;
-  font-size: 28px;
-  line-height: 100%;
-  letter-spacing: -0.04em;
-  color: #262626;
-}
-
-.heart {
-  fill:#F6B83D;
-}
-
-
-.home .logo {
-  color: #ffffff;
-}
-
-.home .heart {
-  fill: #ffffff;
-}
-
-.nav {
-  display: flex;
-  gap: 10px;
-}
-
-.navLink {
-  border: 1px solid rgba(38, 38, 38, 0.15);
-  border-radius: 30px;
-  padding: 15px 20px;
-  min-width: 80px;
-  height: 50px;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.3;
-  color: #262626;
-
-}
-
-.home .navLink {
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  color: #ffffff;
-}
-
-.nav .active {
-  border: 1px solid #f6b83d;
-}
-
-.actions {
-  display: flex;
-  gap: 8px;
-}
-
-.login {
-  border-radius: 30px;
-  padding: 15px 35px;
-  min-width: 119px;
-  height: 50px;
-  background-color: #f6b83d;
-
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.3;
-  text-transform: uppercase;
-  color: #fff;
-}
-
-.home .login {
-  background: transparent;
-  color: #ffffff;
-  border: 1px solid #ffffff;
-}
-
-.register {
-  border-radius: 30px;
-  padding: 15px 20px;
-  min-width: 149px;
-  height: 50px;
-  background-color: #fff4df;
-
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.3;
-  text-transform: uppercase;
-  color: #f6b83d;
-}
-
-/* =====================
-   USER
-===================== */
-/* .user {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.userBar {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.avatar {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #FFF4DF;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.userIcon {
-  fill: #f6b83d;
-}
-
-.name {
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 1;
-  color: #111;
-}
-
-.home .name {
-  color: #fff;
-}
-
-.logout {
-  border-radius: 30px;
-  border: none;
-  padding: 15px 35px;
-  min-width: 119px;
-  height: 50px;
-  background-color: #f6b83d;
-
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.3;
-  text-transform: uppercase;
-  color: #fff;
-} */
-
 .header {
   width: 100%;
   background: transparent;
@@ -171,13 +5,11 @@
   z-index: 10;
 }
 
-
 .headerHome {
   position: absolute;
   top: 0;
   left: 0;
 }
-
 
 .container {
   width: 100%;
@@ -291,6 +123,8 @@
   }
 
   .actions {
+    margin-left: auto;
+    margin-right: 16px;
     display: flex;
     gap: 8px;
   }
@@ -371,17 +205,8 @@
   }
 
   .nav {
-    margin-left: auto;
-    margin-right: 24px;
-  }
-
-  .actions,
-  .user {
-    display: flex;
-    align-items: center;
-  }
-
-  .nav {
+    margin-left: 313px;
+    margin-right: auto;
     display: flex;
     gap: 10px;
   }
@@ -400,6 +225,14 @@
     color: #262626;
   }
 
+  .list {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+ }
+
   .home .navLink {
     border-color: rgba(255, 255, 255, 0.4);
     color: #ffffff;
@@ -407,6 +240,12 @@
 
   .active {
     border-color: #f6b83d;
+  }
+
+  .actions,
+  .user {
+    display: flex;
+    align-items: center;
   }
 
   .burger {
