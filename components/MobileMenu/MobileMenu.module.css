@@ -65,7 +65,7 @@
 }
 
 .nav {
-  margin-bottom: 280px;
+  margin-bottom: 180px;
 }
 
 .list {
@@ -109,14 +109,10 @@
 }
 
 .actions {
-  margin-top: auto;
-
   display: flex;
   flex-direction: column;
   gap: 12px;
   align-items: center;
-
-
 }
 
  .login {
@@ -125,8 +121,8 @@
     justify-content: center;
 
     border-radius: 30px;
-    padding: 15px 35px;
-    min-width: 119px;
+    padding: 12px 60px;
+    width: 178px;
     height: 42px;
     background-color: #f6b83d;
     border: 1px solid transparent;
@@ -138,15 +134,17 @@
 
     color: #ffffff;
 
-   transition:  background-color 0.3s ease, transform 0.3s ease;  
+   transition:  background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;  
   }
 
   .login:hover {
      transform: scale(1.03);
+   
   }
 
   .menuYellow .login:hover {
     background-color: #fff4df;
+    color: #f6b83d;
   }
 
   .menuWhite .login:hover {
@@ -184,7 +182,12 @@
 @media (min-width: 768px){
   .menu {
     width: 374px; 
+    padding: 236px 30px 40px;
   }
+
+  .nav {
+  margin-bottom: 280px;
+}
 
   .list {
     gap: 10px;
@@ -201,11 +204,17 @@
     gap: 8px;
   }
 
-  .login,
+  .login {
+    padding: 15px 35px;
+    width: 120x;
+    font-size: 16px;
+  }
+
+
   .register {
-    height: 50px;
     padding: 15px 20px;
-    font-weight: 700;
+    width: 149px;
+    padding: 15px 10px;
     font-size: 16px;
   }
 }
