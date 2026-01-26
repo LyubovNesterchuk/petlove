@@ -63,7 +63,7 @@
   transform: translateY(-2px);
 }
 
-/* Mobile від 375px (адаптивна) */
+
 @media (min-width: 375px) {
   .card {
     max-width: 375px;
@@ -71,7 +71,7 @@
   }
 }
 
-/* Tablet від 768px */
+
 @media (min-width: 768px) {
   .not-found {
     padding: 40px;
@@ -107,7 +107,7 @@
   }
 }
 
-/* Desktop від 1280px */
+
 @media (min-width: 1280px) {
   .card {
     max-width: 1280px;

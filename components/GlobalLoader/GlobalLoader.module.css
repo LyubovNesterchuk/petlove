@@ -1,4 +1,4 @@
-.global-loader {
+.loader {
   position: fixed;
   inset: 0;
   z-index: 9999;
@@ -14,7 +14,7 @@
 }
 
 @media (min-resolution: 2dppx) {
-  .global-loader {
+  .loader {
     background-image: url('/images/loader-bg-mobile@2x.jpg');
   }
 }
@@ -23,7 +23,8 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
 }
 
 .content {
@@ -31,48 +32,69 @@
   z-index: 1;
   text-align: center;
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-/* ⭐ Коло навколо процентів */
-.percent {
+.circleWrapper {
+  position: relative;
+  width: 200px;
+  height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 427px;
-  height: 427px;
-  margin: 0 auto;
-  
+}
+
+.circleSvg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-90deg);
+}
+
+.circleMobile {
+  display: block;
+}
+
+.circleTablet {
+  display: none;
+}
+
+.circleBackground {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.2);
+  stroke-width: 8;
+}
+
+.circleProgress {
+  fill: none;
+  stroke: #f6b83d;
+  stroke-width: 8;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.2s linear;
+}
+
+.percent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
   font-weight: 700;
-  font-size: 80px;
+  font-size: 48px;
   line-height: 1;
   color: #fff;
-  
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 50%;
-  backdrop-filter: blur(10px);
-}
-
-.progressbar {
-  width: 300px;
-  height: 6px;
-  background: rgba(255, 255, 255, 0.3);
-  margin: 24px auto 0;
-  border-radius: 3px;
-}
-
-.progress {
-  height: 100%;
-  background: #f6b83d;
-  border-radius: 3px;
-  transition: width 0.2s linear;
 }
 
 .logo {
-  display: flex;
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 4px;
   font-weight: 700;
-  font-size: 50px;
+  font-size: 40px;
   line-height: 1;
   color: #fff;
   text-decoration: none;
@@ -80,39 +102,72 @@
 
 .heart {
   fill: #f6b83d;
+  width: 28px;
+  height: 28px;
 }
 
+
 @media (min-width: 768px) {
-  .global-loader {
+  .loader {
     background-image: url('/images/loader-bg-tablet.jpg');
   }
   
-  .percent {
+  .circleWrapper {
     width: 427px;
     height: 427px;
+  }
+
+  .circleMobile {
+    display: none;
+  }
+
+  .circleTablet {
+    display: block;
+  }
+
+  .circleBackground,
+  .circleProgress {
+    stroke-width: 16;
+  }
+
+  .percent {
     font-size: 80px;
   }
 
   .logo {
-    font-weight: 700;
-    font-size: 100px;
+    font-size: 80px;
+  }
+
+  .heart {
+    width: 50px;
+    height: 50px;
   }
 }
 
 @media (min-width: 768px) and (min-resolution: 2dppx) {
-  .global-loader {
+  .loader {
     background-image: url('/images/loader-bg-tablet@2x.jpg');
   }
 }
 
+
 @media (min-width: 1280px) {
-  .global-loader {
+  .loader {
     background-image: url('/images/loader-bg-desktop.jpg');
+  }
+
+  .logo {
+    font-size: 100px;
+  }
+
+  .heart {
+    width: 60px;
+    height: 60px;
   }
 }
 
 @media (min-width: 1280px) and (min-resolution: 2dppx) {
-  .global-loader {
+  .loader {
     background-image: url('/images/loader-bg-desktop@2x.jpg');
   }
 }
