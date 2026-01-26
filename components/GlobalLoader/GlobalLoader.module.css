@@ -3,7 +3,7 @@
   inset: 0;
   z-index: 9999;
 
-  background-image: url('/images/loader-bg.webp');
+  background-image: url('/images/loader-bg-mobile.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -13,36 +13,106 @@
   justify-content: center;
 }
 
-/* затемнення поверх фото */
-.global-loader::before {
+@media (min-resolution: 2dppx) {
+  .global-loader {
+    background-image: url('/images/loader-bg-mobile@2x.jpg');
+  }
+}
+
+.loader::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .content {
   position: relative;
+  z-index: 1;
   text-align: center;
   color: #fff;
 }
 
+/* ⭐ Коло навколо процентів */
 .percent {
-  font-size: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 427px;
+  height: 427px;
+  margin: 0 auto;
+  
   font-weight: 700;
+  font-size: 80px;
+  line-height: 1;
+  color: #fff;
+  
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
 }
 
-.progress-bar {
-  width: 240px;
+.progressbar {
+  width: 300px;
   height: 6px;
-  background: rgba(255, 255, 255, 0.35);
-  border-radius: 4px;
-  overflow: hidden;
-  margin-top: 16px;
+  background: rgba(255, 255, 255, 0.3);
+  margin: 24px auto 0;
+  border-radius: 3px;
 }
 
 .progress {
   height: 100%;
   background: #f6b83d;
-  transition: width 0.3s ease;
+  border-radius: 3px;
+  transition: width 0.2s linear;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 1;
+  color: #fff;
+  text-decoration: none;
+}
+
+.heart {
+  fill: #f6b83d;
+}
+
+@media (min-width: 768px) {
+  .global-loader {
+    background-image: url('/images/loader-bg-tablet.jpg');
+  }
+  
+  .percent {
+    width: 427px;
+    height: 427px;
+    font-size: 80px;
+  }
+
+  .logo {
+    font-weight: 700;
+    font-size: 100px;
+  }
+}
+
+@media (min-width: 768px) and (min-resolution: 2dppx) {
+  .global-loader {
+    background-image: url('/images/loader-bg-tablet@2x.jpg');
+  }
+}
+
+@media (min-width: 1280px) {
+  .global-loader {
+    background-image: url('/images/loader-bg-desktop.jpg');
+  }
+}
+
+@media (min-width: 1280px) and (min-resolution: 2dppx) {
+  .global-loader {
+    background-image: url('/images/loader-bg-desktop@2x.jpg');
+  }
 }

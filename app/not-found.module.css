@@ -1,0 +1,119 @@
+
+.not-found {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.card {
+  background: #f6b83d;
+  border-radius: 60px;
+  padding: 40px 20px;
+  text-align: center;
+  width: 100%;
+  max-width: 335px;
+}
+
+.code {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 120px;
+  gap: 8px;
+  line-height: 1;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 109px;
+  height: 109px;
+  flex-shrink: 0;
+}
+
+.text {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 30px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.03em;
+  color: #f6b83d;
+  background-color: #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #fff4df;
+  transform: translateY(-2px);
+}
+
+/* Mobile від 375px (адаптивна) */
+@media (min-width: 375px) {
+  .card {
+    max-width: 375px;
+    padding: 40px 32px;
+  }
+}
+
+/* Tablet від 768px */
+@media (min-width: 768px) {
+  .not-found {
+    padding: 40px;
+  }
+
+  .card {
+    max-width: 704px;
+    padding: 80px;
+    border-radius: 60px;
+  }
+
+  .code {
+    font-size: 300px;
+    gap: 0;
+    margin-bottom: 40px;
+  }
+
+  .imageWrapper {
+    width: 280px;
+    height: 280px;
+  }
+
+  .text {
+    font-size: 24px;
+    line-height: 1.17;
+    margin-bottom: 28px;
+  }
+
+  .btn {
+    padding: 16px 30px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+/* Desktop від 1280px */
+@media (min-width: 1280px) {
+  .card {
+    max-width: 1280px;
+  }
+
+  .code {
+    gap: 24px;
+  }
+}

@@ -12,6 +12,8 @@ interface Props {
   }[];
   onClose: () => void;
 }
+  // ❗ мок авторизації
+  const isAuth = false;
 
 export default function MobileMenu({ navLinks, onClose }: Props) {
 const pathname = usePathname();
@@ -49,15 +51,23 @@ return (
         </ul>
       </nav>
 
-      <div className={styles.actions}>
-        <Link href="/login" className={styles.login}>
-          Log in
-        </Link>
+          {!isAuth ? (
+            <>
+              <div className={styles.actions}>
+                <Link href="/login" className={styles.login}>
+                  Log in
+                </Link>
+                <Link href="/register" className={styles.register}>
+                  Registration
+                </Link>
+              </div>
 
-        <Link href="/register" className={styles.register}>
-          Registration
-        </Link>
-      </div>
-    </div>
-  );
-}
+            </>
+          ) : (
+            <div className={styles.user}>
+              {!isHome && (
+                <button className={styles.logout}>Log out</button>
+              )}
+            </div>
+          )}
+  </div>)}

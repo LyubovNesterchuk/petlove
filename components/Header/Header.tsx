@@ -101,7 +101,7 @@ export default function Header() {
 
       
       {menuOpen && (
-        <Modal variant="right" onClose={() => setMenuOpen(false)}>
+        <Modal onClose={() => setMenuOpen(false)}>
           <MobileMenu
             navLinks={navLinks}
             onClose={() => setMenuOpen(false)}
