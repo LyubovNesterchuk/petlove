@@ -1,36 +1,122 @@
 .hero {
-  max-width: 1280px;
-  margin: 0 auto;
-  border-radius: 32px;
+  width: 100%;
   overflow: hidden;
 }
-.heroTop {
-  background: #f6b83d;
-  padding: 120px 64px 64px; /* ⬅️ ОЦЕ КЛЮЧ */
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+.container {
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 375px;
 }
 
-.heroTop h1 {
-  font-size: 56px;
-  font-weight: 800;
-  line-height: 1.1;
+.heroTop {
+  background-color: #f6b83d;
+  padding: 120px 20px 50px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+
+.title {
+  margin-bottom: 24px;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 0.9;
   color: #fff;
-  margin: 0;
+}
+
+.titleAccent {
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .heroText {
-  max-width: 340px;
+  font-weight: 500;
   font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.02em;
   color: #fff;
 }
 
 .heroImage {
   position: relative;
-  height: 420px;
+  border-radius: 30px;
+  width: 100%;
+  height: 402px;
+  overflow: hidden;
 }
 
-.heroImage img {
-  object-fit: cover;
+@media (min-width: 375px) {
+  .container {
+    max-width: 375px;
+  }
+  
+  .title {
+    width: 295px;
+  }
+
+  .heroText {
+    max-width: 295px;
+  }
 }
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding: 0 32px;
+  }
+
+  .heroTop {
+    padding: 180px 32px 44px;
+    border-radius: 60px;
+    margin-bottom: 24px;
+  }
+
+  .title {
+    font-size: 80px;
+    width: 640px;
+    margin-bottom: 32px;
+  }
+
+  .heroText {
+    margin-left: auto;
+    max-width: 255px;
+    font-size: 18px;
+    line-height: 1.2;
+  }
+
+  .heroImage {
+    border-radius: 60px;
+    height: 496px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+    padding: 0 32px;
+  }
+
+  .heroTop {
+    padding: 120px 64px 64px;
+    border-radius: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items:first baseline;
+    gap: 70px;
+    margin-bottom: 24px;
+  }
+
+  .title {
+    font-size: 90px;
+    width: 800px;
+  }
+
+  .heroText {
+    width: 255px;
+    font-size: 18px;
+  }
+
+  .heroImage {
+    border-radius: 60px;
+    height: 384px;
+  }
+}
+
