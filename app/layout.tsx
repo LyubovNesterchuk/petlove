@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Roboto } from 'next/font/google';
+import { Toaster } from "react-hot-toast";
 
 import "./global.css";
 import TanStackProvider from "@/components/TanStackProvider/TanStackProvider";
@@ -54,6 +55,7 @@ export default function RootLayout({
             <Header />
             {children}
             {modal}
+            <Toaster position="top-right" />
           </MainLayout>
             {/* <Footer />
           </AuthProvider>        */}

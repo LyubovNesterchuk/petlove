@@ -7,6 +7,7 @@ import clsx from "clsx";
 import Modal from "@/components/Modal/Modal";
 import MobileMenu from "@/components/MobileMenu/MobileMenu";
 import styles from "./Header.module.css";
+import LogOutBtn from "@/components/LogOutBtn/LogOutBtn";
 
 export default function Header() {
   const pathname = usePathname();
@@ -84,8 +85,9 @@ export default function Header() {
           ) : (
             <div className={styles.user}>
               {!isHome && (
-                <button className={styles.logout}>Log out</button>
+                <LogOutBtn />
               )}
+
               <Link href="/profile" className={styles.userBar}>
                 <span className={styles.avatar}>
                   <svg className={styles.userIcon} width="24" height="24">
