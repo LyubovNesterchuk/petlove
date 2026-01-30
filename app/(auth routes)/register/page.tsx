@@ -6,21 +6,34 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 
-import { login } from '@/lib/api/clientApi';
+import { register as registerUser } from '@/lib/api/clientApi';
 import { useAuthStore } from '@/lib/store/authStore';
-import styles from './LoginPage.module.css';
+import styles from './RegistrationPage.module.css';
 
-type LoginFormValues = {
+type RegistrationFormValues = {
+  name: string;
   email: string;
   password: string;
+  confirmPassword: string;
 };
 
 const schema = yup.object({
-  email: yup.string().email('Invalid email').required('Email is required'),
-  password: yup.string().min(6, 'Minimum 6 characters').required('Password is required'),
+  name: yup.string().required('Name is required'),
+  email: yup
+    .string()
+    .email('Invalid email')
+    .required('Email is required'),
+  password: yup
+    .string()
+    .min(7, 'Minimum 7 characters')
+    .required('Password is required'),
+  confirmPassword: yup
+    .string()
+    .oneOf([yup.ref('password')], 'Passwords must match')
+    .required('Confirm password is required'),
 });
 
-export default function LoginPage() {
+export default function RegistrationPage() {
   const router = useRouter();
   const isAuth = useAuthStore(s => s.isAuthenticated);
   const setUser = useAuthStore(s => s.setUser);
@@ -33,29 +46,36 @@ export default function LoginPage() {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<LoginFormValues>({
+  } = useForm<RegistrationFormValues>({
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = async (data: LoginFormValues) => {
+  const onSubmit = async (data: RegistrationFormValues) => {
     try {
-      const res = await login(data);
+      const res = await registerUser(data);
       setUser(res);
       router.replace('/profile');
     } catch {
-      alert('Invalid email or password');
+      alert('Registration failed');
     }
   };
 
   return (
     <main className={styles.page}>
       <div className={styles.card}>
-        <h1 className={styles.title}>Log in</h1>
+        <h1 className={styles.title}>Registration</h1>
         <p className={styles.subtitle}>
-          Welcome! Please enter your credentials
+          Thank you for your interest in our platform.
         </p>
 
         <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+          <input
+            {...register('name')}
+            placeholder="Name"
+            className={styles.input}
+          />
+          <p className={styles.error}>{errors.name?.message}</p>
+
           <input
             {...register('email')}
             placeholder="Email"
@@ -71,16 +91,22 @@ export default function LoginPage() {
           />
           <p className={styles.error}>{errors.password?.message}</p>
 
+          <input
+            type="password"
+            {...register('confirmPassword')}
+            placeholder="Confirm password"
+            className={styles.input}
+          />
+          <p className={styles.error}>{errors.confirmPassword?.message}</p>
+
           <button type="submit" className={styles.button}>
-            LOG IN
+            REGISTRATION
           </button>
         </form>
 
         <p className={styles.footer}>
-          Don’t have an account?{' '}
-          <span onClick={() => router.push('/registration')}>
-            Register
-          </span>
+          Already have an account?{' '}
+          <span onClick={() => router.push('/login')}>Log in</span>
         </p>
       </div>
     </main>
