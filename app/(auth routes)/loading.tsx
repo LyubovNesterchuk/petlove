@@ -1,3 +1,8 @@
+import GlobalLoader from "@/components/GlobalLoader/GlobalLoader"
+
 export default function Loading() {
-  return <div>Loading...</div>;
+  return 
+ (< GlobalLoader/>) 
+  
+  // <div>Loading...</div>;
 }
