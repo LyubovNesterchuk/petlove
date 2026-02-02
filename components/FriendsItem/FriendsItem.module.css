@@ -1,0 +1,41 @@
+.card {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.logoWrap {
+  flex-shrink: 0;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.link {
+  color: #f6b83d;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: #d9a02b;
+  text-decoration: underline;
+}
