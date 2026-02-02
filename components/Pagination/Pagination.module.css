@@ -1,0 +1,33 @@
+.pagination {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin: 48px 0;
+}
+
+.circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid #e5e5e5;
+  background: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.circle:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.active {
+  background: #f6b83d;
+  border-color: #f6b83d;
+  color: white;
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+}
