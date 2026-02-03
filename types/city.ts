@@ -4,3 +4,11 @@ export type Location = {
   cityEn: string;
   countyEn?: string;
 };
+
+export type City = {
+  _id: string;
+  stateEn: string;
+  cityEn: string;
+  countyEn?: string;
+  useCounty?: string;
+};

@@ -10,9 +10,15 @@ images: {
         hostname: 'ftp.goit.study',
         pathname: '/img/petsfriends/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'media4.giphy.com',
+        pathname: '/media/**',
+      },
     ],
   },
 };
+
 
 module.exports = nextConfig;
 

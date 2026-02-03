@@ -61,3 +61,52 @@ export const Pagination = ({ page, totalPages, onChange }: Props) => {
     </div>
   );
 };
+
+// 'use client';
+
+// import { useRouter, useSearchParams } from 'next/navigation';
+// import styles from './Pagination.module.css';
+
+// type Props = {
+//   page: number;
+//   totalPages: number;
+// };
+
+// export const Pagination = ({ page, totalPages }: Props) => {
+//   const router = useRouter();
+//   const params = useSearchParams();
+
+//   const goTo = (p: number) => {
+//     const sp = new URLSearchParams(params.toString());
+//     sp.set('page', String(p));
+//     router.push(`/notices?${sp}`);
+//   };
+
+//   return (
+//     <div className={styles.pagination}>
+//       <button disabled={page === 1} onClick={() => goTo(1)}>
+//         {'<<'}
+//       </button>
+
+//       <button disabled={page === 1} onClick={() => goTo(page - 1)}>
+//         {'<'}
+//       </button>
+
+//       <span>{page}</span>
+
+//       <button
+//         disabled={page === totalPages}
+//         onClick={() => goTo(page + 1)}
+//       >
+//         {'>'}
+//       </button>
+
+//       <button
+//         disabled={page === totalPages}
+//         onClick={() => goTo(totalPages)}
+//       >
+//         {'>>'}
+//       </button>
+//     </div>
+//   );
+// };
