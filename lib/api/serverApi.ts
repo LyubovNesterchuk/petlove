@@ -5,49 +5,59 @@ import { Notice } from '@/types/notice';
 
 // ------------------ Notice ------------------
 
-export interface FetchNoticesResponse {
-  notices: Notice[];
-  totalPages: number;
-}
 
-export const fetchServerNotices = async (
-  search: string,
-  page = 1,
-  perPage = 12,
-  tag?: string
-): Promise<FetchNoticesResponse> => {
-  const cookieStore = await cookies();
-
-  const params: Record<string, string | number> = {
-    search,
-    page,
-    perPage,
-  };
-
-  if (tag && tag !== "all") {
-    params.tag = tag;
-  }
-
-  const { data } = await nextServer.get<FetchNoticesResponse>("/notices", {
-    params,
-    headers: {
-      Cookie: cookieStore.toString(),
-    },
-  });
-
+export const getNoticesServer = async (): Promise<Notice[]> => {
+  const { data } = await nextServer.get<Notice[]>('/notices');
   return data;
 };
 
-
-export const fetchServerNoteById = async (noticeId: string): Promise<Notice> => {
-  const cookieStore = await cookies();
-
-  const { data } = await nextServer.get<Notice>(`/notices/${noticeId}`, {
-    headers: { Cookie: cookieStore.toString() },
-  });
-
+export const getNoticeByIdServer = async (id: string): Promise<Notice> => {
+  const { data } = await nextServer.get<Notice>(`/notices/${id}`);
   return data;
 };
+// export interface FetchNoticesResponse {
+//   notices: Notice[];
+//   totalPages: number;
+// }
+
+// export const fetchServerNotices = async (
+//   search: string,
+//   page = 1,
+//   perPage = 12,
+//   tag?: string
+// ): Promise<FetchNoticesResponse> => {
+//   const cookieStore = await cookies();
+
+//   const params: Record<string, string | number> = {
+//     search,
+//     page,
+//     perPage,
+//   };
+
+//   if (tag && tag !== "all") {
+//     params.tag = tag;
+//   }
+
+//   const { data } = await nextServer.get<FetchNoticesResponse>("/notices", {
+//     params,
+//     headers: {
+//       Cookie: cookieStore.toString(),
+//     },
+//   });
+
+//   return data;
+// };
+
+
+// export const fetchServerNoteById = async (noticeId: string): Promise<Notice> => {
+//   const cookieStore = await cookies();
+
+//   const { data } = await nextServer.get<Notice>(`/notices/${noticeId}`, {
+//     headers: { Cookie: cookieStore.toString() },
+//   });
+
+//   return data;
+// };
 
 
 // -- Auth ------------------

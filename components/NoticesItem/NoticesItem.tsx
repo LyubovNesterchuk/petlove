@@ -1,8 +1,14 @@
 'use client';
 
+import Image from 'next/image';
 import styles from './NoticesItem.module.css';
+import { Notice } from '@/types/notice';
 
-export const NoticesItem = ({ notice }: { notice: any }) => {
+interface Props {
+  notice: Notice;
+}
+
+export const NoticesItem = ({ notice }: Props) => {
   const isAuth = false; // з auth store
 
   const handleLearnMore = () => {
@@ -10,7 +16,7 @@ export const NoticesItem = ({ notice }: { notice: any }) => {
       // open ModalAttention
       return;
     }
-    // fetch details → open ModalNotice
+    // open ModalNotice
   };
 
   const toggleFavorite = () => {
@@ -23,10 +29,15 @@ export const NoticesItem = ({ notice }: { notice: any }) => {
 
   return (
     <li className={styles.card}>
-      <img src={notice.image} alt={notice.title} />
+      <Image
+        src={notice.imgURL}
+        alt={notice.title}
+        width={300}
+        height={200}
+        className={styles.image}
+      />
 
       <h3>{notice.title}</h3>
-
       <p>{notice.comment}</p>
 
       <div className={styles.actions}>

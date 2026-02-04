@@ -15,6 +15,11 @@ images: {
         hostname: 'media4.giphy.com',
         pathname: '/media/**',
       },
+            {
+        protocol: 'https',
+        hostname: 'ftp.goit.study',
+        pathname: '/img/pets/**',
+      },
     ],
   },
 };

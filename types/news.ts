@@ -1,4 +1,4 @@
-export interface NewsItem {
+export interface News {
   _id: string;
   imgUrl: string;
   title: string;
@@ -11,5 +11,5 @@ export interface NewsResponse {
   page: number;
   perPage: number;
   totalPages: number;
-  results: NewsItem[];
+  results: News[];
 }

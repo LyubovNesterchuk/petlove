@@ -1,8 +1,12 @@
 import Image from 'next/image';
 import styles from './NewsItem.module.css';
-import { NewsItem as NewsItemType } from '@/types/news';
+import { News } from '@/types/news';
 
-export const NewsItem = ({ item }: { item: NewsItemType }) => {
+interface Props {
+  item: News;
+}
+
+export const NewsItem = ({ item }: Props) => {
   return (
     <article className={styles.card}>
       <div className={styles.imageWrapper}>

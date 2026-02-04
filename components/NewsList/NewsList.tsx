@@ -1,13 +1,19 @@
-import styles from './NewsList.module.css';
 import { NewsItem } from '../NewsItem/NewsItem';
-import { NewsItem as NewsItemType } from '@/types/news';
+import styles from './NewsList.module.css';
+import { News } from '@/types/news';
 
-export const NewsList = ({ news }: { news: NewsItemType[] }) => {
+interface Props {
+  news: News[];
+}
+
+export const NewsList = ({ news }: Props) => {
   return (
-    <div className={styles.list}>
+    <ul className={styles.list}>
       {news.map(item => (
-        <NewsItem key={item._id} item={item} />
+        <li key={item._id} className={styles.item}>
+          <NewsItem item={item} />
+        </li>
       ))}
-    </div>
+    </ul>
   );
 };

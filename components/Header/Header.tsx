@@ -67,7 +67,7 @@ export default function Header() {
                 <Link href="/login" className={styles.login}>
                   Log in
                 </Link>
-                <Link href="/registration" className={styles.register}>
+                <Link href="/register" className={styles.register}>
                   Registration
                 </Link>
               </div>

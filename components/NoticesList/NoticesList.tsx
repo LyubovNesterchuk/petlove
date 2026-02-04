@@ -1,10 +1,15 @@
 import { NoticesItem } from '../NoticesItem/NoticesItem';
 import styles from './NoticesList.module.css';
+import { Notice } from '@/types/notice';
 
-export const NoticesList = ({ notices }: { notices: any[] }) => (
+interface Props {
+  notices: Notice[];
+}
+
+export const NoticesList = ({ notices }: Props) => (
   <ul className={styles.list}>
     {notices.map((item) => (
-      <NoticesItem key={item.id} notice={item} />
+      <NoticesItem key={item._id} notice={item} />
     ))}
   </ul>
 );

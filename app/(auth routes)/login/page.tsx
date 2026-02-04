@@ -78,7 +78,7 @@ export default function LoginPage() {
 
         <p className={styles.footer}>
           Don’t have an account?{' '}
-          <span onClick={() => router.push('/registration')}>
+          <span onClick={() => router.push('/register')}>
             Register
           </span>
         </p>
