@@ -1,0 +1,191 @@
+.card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* IMAGE */
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+}
+
+/* FAVORITE BUTTON */
+
+.favoriteBtn {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.iconHeart {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: #f6b83d;
+}
+
+.favoriteBtn.active .iconHeart {
+  fill: #f6b83d;
+  stroke: #f6b83d;
+}
+
+/* CONTENT */
+
+.content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* TITLE */
+
+.titleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.33;
+  color: #111111;
+}
+
+/* RATING */
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #111111;
+}
+
+.iconStar {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: #f6b83d;
+}
+
+/* META */
+
+.meta {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 8px;
+  column-gap: 12px;
+  margin-bottom: 12px;
+}
+
+.meta li {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+}
+
+.meta span:first-child {
+  color: #8a8a89;
+}
+
+.meta span:last-child {
+  font-weight: 500;
+  color: #111111;
+}
+
+/* COMMENT */
+
+.comment {
+  font-size: 14px;
+  line-height: 1.43;
+  color: #111111;
+  margin-bottom: auto;
+}
+
+/* FOOTER */
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111111;
+}
+
+.learnMore {
+  padding: 10px 28px;
+  background-color: #f6b83d;
+  border-radius: 30px;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* -------------------- ADAPTIVE -------------------- */
+
+/* mobile ≤374 — fluid */
+@media screen and (max-width: 374px) {
+  .card {
+    border-radius: 12px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+}
+
+/* mobile ≥375 */
+@media screen and (min-width: 375px) {
+  .card {
+    max-width: 335px;
+  }
+}
+
+/* tablet ≥768 */
+@media screen and (min-width: 768px) {
+  .card {
+    max-width: 342px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+}
+
+/* desktop ≥1280 */
+@media screen and (min-width: 1280px) {
+  .card {
+    max-width: 344px;
+  }
+}

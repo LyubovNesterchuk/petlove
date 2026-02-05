@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-
+import {PetBlock} from  "@/components/PetBlock/PetBlock"
 import { login } from '@/lib/api/clientApi';
 import { useAuthStore } from '@/lib/store/authStore';
 import styles from './LoginPage.module.css';
@@ -49,6 +49,7 @@ export default function LoginPage() {
 
   return (
     <main className={styles.page}>
+      <PetBlock />
       <div className={styles.card}>
         <h1 className={styles.title}>Log in</h1>
         <p className={styles.subtitle}>

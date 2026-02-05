@@ -1,0 +1,120 @@
+ .wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  
+}
+
+ .background {
+  position: relative;
+  width: 100%;
+  max-width: 704px;
+  background: #fcbf49;
+  border-radius: 32px;
+  padding: 24px;
+  overflow: hidden;
+
+
+} 
+
+
+ .background::before {
+  content: '';
+  position: absolute;
+  inset: 16px;
+  background: #ffd670;
+  border-radius: 28px;
+  z-index: 0;
+}
+
+.imageWrapper {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  min-height: 302px;
+}
+
+.petImage {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* картка з описом */
+.card {
+  position: absolute;
+  left: 24px;
+  bottom: 32px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 12px 16px;
+  max-width: 260px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.name {
+  font-weight: 600;
+  color: #f77f00;
+}
+
+.birthday {
+  color: #8d8d8d;
+}
+
+.text {
+  font-size: 12px;
+  line-height: 1.4;
+  color: #333;
+}
+
+/* ================== ADAPTIVE ================== */
+
+@media (min-width: 375px) {
+  .background {
+    padding: 32px;
+  }
+
+  .imageWrapper {
+    min-height: 340px;
+  }
+}
+
+@media (min-width: 768px) {
+  .background {
+    max-width: 704px;
+    border-radius: 40px;
+  }
+
+  .imageWrapper {
+    min-height: 302px;
+  }
+
+  .card {
+    bottom: 40px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .background {
+    max-width: 592px;
+  }
+
+  .imageWrapper {
+    min-height: 654px;
+  }
+
+  .card {
+    left: 32px;
+    bottom: 64px;
+  }
+}

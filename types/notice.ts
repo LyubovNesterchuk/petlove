@@ -46,3 +46,7 @@ export type Notice = {
   createdAt: string;
   updatedAt: string;
 };
+
+export type NoticeCard = Notice & {
+  isFavorite: boolean;
+};
